@@ -39,27 +39,34 @@ To access the Checky Validate Email API, you need to sign up on RapidAPI and sub
 ```bash
 # Validate a single email address using POST request
 curl -X POST \
-  checky-validate-email-api.com/validate \
+  checky-validate-email-api/validate \
   -H 'Content-Type: application/json' \
   -H 'X-RapidAPI-Key: YOUR_API_KEY' \
   -d '{"email": "example@example.com"}'
 
 # Validate a single email address using GET request
 curl -X GET \
-  'checky-validate-email-api.com/validate?email=example@example.com' \
+  'checky-validate-email-api/validate?email=example@example.com' \
   -H 'X-RapidAPI-Key: YOUR_API_KEY'
 
 # Extract and validate email addresses from text input
 curl -X POST \
-  checky-validate-email-api.com/extract \
+  checky-validate-email-api/extract \
   -H 'Content-Type: application/json' \
   -H 'X-RapidAPI-Key: YOUR_API_KEY' \
   -d '{"text": "Here are some emails: example@example.com, test@test.com"}'
+  
+# Extract and validate email addresses from HTML as text input
+curl -X POST \
+  checky-validate-email-api/extract \
+  -H 'Content-Type: application/json' \
+  -H 'X-RapidAPI-Key: YOUR_API_KEY' \
+  -d '{"text": "<body><h1>HTML Test</h1><p>This is a sample HTML document with test email addresses:</p><ul><li>john.doe@example.com</li><li>alice.smith@test.com</li><li>info@company.org</li></u></body></html>"}'
 ```
   
 ## 🔧 Issues
 
-If you encounter any issues or have suggestions for improvement, please [open an issue](https://github.com/dakidarts/Checky-Validate-Email-API/issues) on GitHub. We appreciate your feedback! 🛠️
+If you encounter any issues or have suggestions for improvement, please [open an issue](https://github.com/dakidarts/Checky-Validate-Email-API/issues) on GitHub. We appreciate your feedback!
 
 ## 📝 License
 
